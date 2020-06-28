@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Flask</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="container" style="background-color:#c9c9c5">
+<h1 style="margin-top: 20px">Let's Learn Flask</h1>
+<div style="height: 100px"></div>
+<a class="btn btn-primary" href="{{ url_for('contact_list') }}" style="float: right; margin-bottom: 20px">Contact List</a>
+<h2>Contact Form</h2>
+<div class="card" style="padding: 30px; border-radius: 10px; width: 100%">
+    <form action="{{ url_for('home') }}" method="post">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="Enter your name" name="your_name" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email Address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="Enter email" name="email" required>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Your Message</label>
+            <textarea style="height: 200px" class="form-control" placeholder="Message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

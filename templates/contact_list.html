@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact-List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="container" style="background-color:#c9c9c5">
+<div style="height: 80px"></div>
+<a class="btn btn-primary" href="{{ url_for('home') }}" style="float: right; margin-bottom: 20px">Contact Form</a>
+<h2>Contact List</h2>
+<div class="card" style="padding: 30px; border-radius: 10px; width: 100%">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">S.N.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Message</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.message }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
